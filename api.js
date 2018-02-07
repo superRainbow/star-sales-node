@@ -32,9 +32,9 @@ app.post('/sendForm', function(req, res, next) {
   // 寄信內容
   const mailOptions ={
     //寄件者
-    from: '"輔銷系統"<rainbow@restaurant.com>',
+    from: '"輔銷系統"<rainbow@test.com>',
     //收件者
-    to: 'alex@mitake.com.tw',
+    to: 'rainbow@mitake.com.tw',
     //主旨
     subject: '輔銷系統',
     //純文字
