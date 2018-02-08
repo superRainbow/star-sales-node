@@ -24,8 +24,8 @@ app.post('/sendForm', function(req, res, next) {
   var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-        user: 'superrainbow9487@gmail.com',
-        pass: 'j6h93cj/6'
+        user: process.env.GMAIL_ACCOUNT,
+        pass: process.env.GMAIL_PASS
     }
   });
 
@@ -35,19 +35,21 @@ app.post('/sendForm', function(req, res, next) {
     from: '"輔銷系統"<rainbow@test.com>',
     //收件者
     to: 'rainbow@mitake.com.tw',
+    // 副本
+    cc: 'g901612002@gmail.com',
     //主旨
     subject: '輔銷系統',
     //純文字
     text: '',
     //嵌入 html 的內文
-    html: `<h2>輔銷系統信件通知：</h2>
-    <p>需求者姓名：${data.name}</p>
-    <p>email：${data.email} </p>
+    html: `<h2>輔銷系統需求信件通知：</h2>
+    <p>需求者姓名： ${data.name}</p>
+    <p>email： ${data.email} </p>
     <p>公司名稱： ${data.company}</p>
     <p>部門職稱： ${data.part}</p>
-    <p>電話 ${data.tel}</p>
-    <p>需求服務內容 ${data.requirement}</p>
-    <p>預算 ${data.budget}</p>
+    <p>電話： ${data.tel}</p>
+    <p>需求服務內容： ${data.requirement}</p>
+    <p>預算： ${data.budget}</p>
     `
   }
 
