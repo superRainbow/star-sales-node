@@ -32,13 +32,13 @@ app.post('/sendForm', function(req, res, next) {
   // 寄信內容
   const mailOptions ={
     //寄件者
-    from: '"輔銷系統"<rainbow@test.com>',
+    from: '"輔銷系統"<startsell@test.com>',
     //收件者
     to: 'rainbow@mitake.com.tw',
     // 副本
     cc: 'g901612002@gmail.com',
     //主旨
-    subject: '輔銷系統',
+    subject: '輔銷系統客戶需求信件通知',
     //純文字
     text: '',
     //嵌入 html 的內文
@@ -50,6 +50,7 @@ app.post('/sendForm', function(req, res, next) {
     <p>電話： ${data.tel}</p>
     <p>需求服務內容： ${data.requirement}</p>
     <p>預算： ${data.budget}</p>
+    <p>服務需求或說明： ${data.description}</p>
     `
   }
 
