@@ -32,11 +32,11 @@ app.post('/sendForm', function(req, res, next) {
   // 寄信內容
   const mailOptions ={
     //寄件者
-    from: '"輔銷系統"<startsell@test.com>',
+    from: '"輔銷系統"<star.mitake.com.tw>',
     //收件者
-    to: 'rainbow@mitake.com.tw',
-    // 副本
-    cc: 'g901612002@gmail.com',
+    to: 'service@mitake.com.tw',
+    // 密件副本
+    bcc: 'rainbow@mitake.com.tw, alex@mitake.com.tw',
     //主旨
     subject: '輔銷系統客戶需求信件通知',
     //純文字
